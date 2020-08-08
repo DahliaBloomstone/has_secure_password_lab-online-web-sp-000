@@ -6,3 +6,6 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   get '/:user', to: 'users#show', as: 'homepage'
 end
+
+
+#rake routes 
