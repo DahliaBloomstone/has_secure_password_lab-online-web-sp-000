@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
 
 # SessionsController#create method l
   def create
-    @user = User.find_by(name: params[:user][:name])
+    @user = User.find_by(name: params[:user][:name]) #logs you in withcorrect name 
     if @user == nil
       redirect_to 'new'
     else
