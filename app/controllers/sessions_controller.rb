@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   def new
   end
 
-# SessionsController#create method 
+# SessionsController#create method l
   def create
     @user = User.find_by(name: params[:user][:name])
     if @user == nil
