@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save #saves user
-      session[:user_id] = @user.id #logs you in 
+      session[:user_id] = @user.id #logs you in
       redirect_to homepage_path(@user)
     else
       redirect_to '/'
@@ -20,6 +20,7 @@ class UsersController < ApplicationController
 
   private
 
+#sets your password if the confirmation matches 
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation)
   end
