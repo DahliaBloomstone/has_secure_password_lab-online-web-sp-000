@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id #logs you in
       redirect_to homepage_path(@user)
     else
-      redirect_to '/'
+      redirect_to '/' #redirects if password and confirmation don't match 
     end
   end
 
@@ -20,7 +20,7 @@ class UsersController < ApplicationController
 
   private
 
-#sets your password if the confirmation matches 
+#sets your password if the confirmation matches
   def user_params
     params.require(:user).permit(:name, :password, :password_confirmation)
   end
